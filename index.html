@@ -2,1271 +2,337 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HoangCheat • Get Key</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HoangCheat - Get Key</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html,body{
     margin:0;
+    width:100%;
     min-height:100%;
+    font-family:Arial,sans-serif;
+    color:white;
+    background:#02020b;
 }
 
 body{
-    font-family:'Rajdhani',sans-serif;
-    color:#fff;
     overflow-x:hidden;
-
-    background:
-        radial-gradient(circle at 15% 20%,
-            rgba(60,90,255,.35),
-            transparent 25%),
-
-        radial-gradient(circle at 85% 20%,
-            rgba(170,50,255,.25),
-            transparent 25%),
-
-        radial-gradient(circle at 50% 100%,
-            rgba(20,120,255,.22),
-            transparent 35%),
-
-        #02030c;
 }
 
-/* =====================================================
-   GALAXY BACKGROUND
-===================================================== */
+/* ===== GALAXY ===== */
 
 .galaxy{
     position:fixed;
     inset:0;
     overflow:hidden;
-    pointer-events:none;
     z-index:0;
+    background:
+      radial-gradient(circle at 50% 10%,#43118a 0,transparent 25%),
+      radial-gradient(circle at 10% 70%,#092d83 0,transparent 30%),
+      radial-gradient(circle at 90% 70%,#6d0a83 0,transparent 28%),
+      #02020b;
 }
 
-/* sao */
-
-.galaxy::before{
+.galaxy:before,
+.galaxy:after{
     content:"";
     position:absolute;
     inset:-100px;
-
     background-image:
-        radial-gradient(circle,#fff 1px,transparent 1.6px),
-        radial-gradient(circle,#8eb8ff 1px,transparent 1.5px),
-        radial-gradient(circle,#d895ff 1px,transparent 1.5px),
-        radial-gradient(circle,#fff 1.5px,transparent 2px);
-
-    background-size:
-        75px 75px,
-        130px 130px,
-        190px 190px,
-        260px 260px;
-
-    background-position:
-        10px 20px,
-        50px 80px,
-        120px 30px,
-        200px 150px;
-
-    opacity:.65;
-
-    animation:
-        starsMove 25s linear infinite,
-        starsGlow 3s ease-in-out infinite alternate;
+      radial-gradient(circle,#fff 1px,transparent 1.5px),
+      radial-gradient(circle,#8ec5ff 1px,transparent 1.5px),
+      radial-gradient(circle,#e895ff 1px,transparent 1.5px);
+    background-size:80px 80px,135px 135px,200px 200px;
+    animation:stars 18s linear infinite;
+    opacity:.7;
 }
 
-@keyframes starsMove{
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(160px);
-    }
+.galaxy:after{
+    animation:stars2 30s linear infinite;
+    opacity:.3;
 }
 
-@keyframes starsGlow{
-    from{
-        filter:brightness(.7);
-    }
-
-    to{
-        filter:brightness(1.35);
-    }
+@keyframes stars{
+    from{transform:translateY(0)}
+    to{transform:translateY(150px)}
 }
 
-/* tinh vân */
-
-.nebula{
-    position:absolute;
-    width:650px;
-    height:650px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(100,90,255,.20),
-            rgba(160,40,255,.12),
-            transparent 70%
-        );
-
-    filter:blur(35px);
-
-    animation:nebula 12s ease-in-out infinite alternate;
+@keyframes stars2{
+    from{transform:translate(0,0)}
+    to{transform:translate(-80px,130px)}
 }
 
-.n1{
-    top:-300px;
-    left:-250px;
-}
-
-.n2{
-    right:-300px;
-    bottom:-250px;
-
-    animation-delay:3s;
-}
-
-@keyframes nebula{
-    from{
-        transform:scale(.8) rotate(0deg);
-    }
-
-    to{
-        transform:scale(1.2) rotate(25deg);
-    }
-}
-
-/* =====================================================
-   SHOOTING STARS
-===================================================== */
+/* ===== SAO BĂNG ===== */
 
 .meteor{
-    position:fixed;
-
+    position:absolute;
     width:5px;
     height:5px;
-
     border-radius:50%;
-
-    background:#fff;
-
+    background:white;
     box-shadow:
-        0 0 8px #fff,
-        0 0 18px #6ca9ff,
-        0 0 40px #8b4dff;
-
+      0 0 8px white,
+      0 0 20px #50aaff,
+      0 0 40px #c44cff;
     transform:rotate(-45deg);
-
-    z-index:1;
-}
-
-.meteor::after{
-    content:"";
-
-    position:absolute;
-
-    right:2px;
-    top:1px;
-
-    width:170px;
-    height:3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.95),
-            rgba(90,150,255,.55),
-            rgba(140,70,255,.2),
-            transparent
-        );
-
-    filter:blur(.5px);
-}
-
-.m1{
-    top:8%;
-    left:105%;
-
     animation:meteor 4s linear infinite;
 }
 
-.m2{
-    top:32%;
-    left:110%;
-
-    animation:meteor 5s linear infinite 1.8s;
+.meteor:after{
+    content:"";
+    position:absolute;
+    right:2px;
+    top:1px;
+    width:180px;
+    height:3px;
+    background:linear-gradient(
+      90deg,
+      white,
+      #629aff,
+      transparent
+    );
 }
 
-.m3{
-    top:57%;
-    left:105%;
-
-    animation:meteor 4.7s linear infinite 3.5s;
-}
-
-.m4{
-    top:18%;
-    left:120%;
-
-    animation:meteor 6s linear infinite 5s;
-}
+.m1{top:10%;left:105%}
+.m2{top:35%;left:110%;animation-delay:2s}
+.m3{top:55%;left:100%;animation-delay:4s}
+.m4{top:20%;left:85%;animation-delay:6s}
 
 @keyframes meteor{
-
     0%{
         transform:translate(0,0) rotate(-45deg);
         opacity:0;
     }
-
-    8%{
-        opacity:1;
-    }
-
-    65%{
-        opacity:1;
-    }
-
+    8%{opacity:1}
+    65%{opacity:1}
     100%{
-        transform:
-            translate(-800px,800px)
-            rotate(-45deg);
-
+        transform:translate(-750px,750px) rotate(-45deg);
         opacity:0;
     }
 }
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* ===== CONTAINER ===== */
 
-.header{
+.page{
     position:relative;
-    z-index:5;
-
-    height:82px;
-
-    display:flex;
-    align-items:center;
-
-    padding:0 28px;
-
-    background:
-        rgba(2,4,16,.72);
-
-    border-bottom:
-        1px solid rgba(110,150,255,.2);
-
-    backdrop-filter:blur(18px);
-
-    box-shadow:
-        0 5px 30px rgba(0,0,0,.25);
+    z-index:2;
+    max-width:850px;
+    margin:auto;
+    padding:25px 14px 45px;
 }
+
+/* ===== LOGO ===== */
 
 .logo{
-    font-family:'Orbitron',sans-serif;
+    text-align:center;
+}
 
+.logo h1{
+    margin:0;
+    font-size:clamp(48px,11vw,100px);
+    line-height:.9;
+    font-weight:1000;
+    font-style:italic;
+    letter-spacing:-5px;
+    color:white;
+    text-shadow:
+      0 0 5px white,
+      0 0 15px #54a5ff,
+      0 0 30px #7a36ff,
+      0 0 60px #ed24ff;
+}
+
+.logo h1 span{
+    display:block;
+    color:#a947ff;
+    text-shadow:
+      0 0 5px white,
+      0 0 20px #8b35ff,
+      0 0 50px #ff24df;
+}
+
+.by{
+    margin-top:15px;
+    color:#ffb4ff;
     font-size:23px;
+    font-weight:bold;
+    text-shadow:0 0 15px #ff25e9;
+}
+
+.system-title{
+    width:max-content;
+    max-width:100%;
+    margin:25px auto;
+    padding:9px 35px;
+    border-top:1px solid #5deaff;
+    border-bottom:1px solid #5deaff;
+    color:#5df5ff;
+    letter-spacing:7px;
     font-weight:900;
-
-    letter-spacing:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #6fa9ff,
-            #c96cff,
-            #ffffff
-        );
-
-    background-size:250%;
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    animation:logoFlow 4s linear infinite;
-
-    text-shadow:
-        0 0 25px rgba(90,140,255,.5);
+    text-shadow:0 0 15px #00d9ff;
 }
 
-@keyframes logoFlow{
-    from{
-        background-position:0%;
-    }
-
-    to{
-        background-position:250%;
-    }
-}
-
-/* =====================================================
-   MAIN
-===================================================== */
-
-.container{
-    position:relative;
-    z-index:3;
-
-    width:100%;
-    max-width:700px;
-
-    margin:45px auto;
-
-    padding:
-        0 17px;
-}
-
-/* =====================================================
-   ANIME
-===================================================== */
-
-.anime-box{
-    position:relative;
-
-    width:100%;
-    height:245px;
-
-    margin-bottom:18px;
-
-    overflow:hidden;
-
-    border-radius:22px;
-
-    border:
-        1px solid rgba(110,160,255,.45);
-
-    background:#080a18;
-
-    box-shadow:
-        0 0 35px rgba(60,100,255,.22),
-        0 20px 60px rgba(0,0,0,.45);
-}
-
-.anime-box img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    object-position:center 28%;
-
-    filter:
-        saturate(1.15)
-        contrast(1.05)
-        brightness(.82);
-
-    transform:scale(1.04);
-
-    transition:
-        transform 5s ease,
-        filter .5s ease;
-}
-
-.anime-box:hover img{
-    transform:scale(1.10);
-
-    filter:
-        saturate(1.3)
-        contrast(1.08)
-        brightness(.95);
-}
-
-/* phủ màu */
-
-.anime-box::after{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent 40%,
-            rgba(3,5,18,.92) 100%
-        );
-}
-
-/* chữ trên anime */
-
-.anime-title{
-    position:absolute;
-
-    z-index:2;
-
-    left:22px;
-    bottom:18px;
-
-    font-family:'Orbitron',sans-serif;
-
-    font-size:17px;
-    font-weight:800;
-
-    letter-spacing:2px;
-
-    color:#fff;
-
-    text-shadow:
-        0 0 8px #6da8ff,
-        0 0 20px #7c4dff;
-}
-
-/* =====================================================
-   CARD
-===================================================== */
+/* ===== MAIN CARD ===== */
 
 .card{
     position:relative;
+    padding:22px;
+    border-radius:25px;
+    border:1px solid #566dff;
 
-    overflow:hidden;
+    background:rgba(4,8,35,.76);
 
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(14,20,48,.94),
-            rgba(5,8,24,.96)
-        );
-
-    border:
-        1px solid rgba(110,150,255,.35);
+    backdrop-filter:blur(12px);
 
     box-shadow:
-        0 0 35px rgba(70,100,255,.18),
-        0 25px 80px rgba(0,0,0,.6);
-
-    backdrop-filter:blur(20px);
+      0 0 15px #365eff,
+      0 0 50px rgba(112,40,255,.35),
+      inset 0 0 35px rgba(70,100,255,.08);
 }
 
-/* viền chạy */
-
-.card::before{
-    content:"";
-
-    position:absolute;
-    inset:-2px;
-
-    border-radius:24px;
-
-    background:
-        conic-gradient(
-            from 0deg,
-            transparent,
-            #4e8cff,
-            transparent,
-            #c24cff,
-            transparent
-        );
-
-    animation:
-        borderSpin 7s linear infinite;
-
-    opacity:.45;
-
-    z-index:-1;
-}
-
-@keyframes borderSpin{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-/* =====================================================
-   PROFILE
-===================================================== */
+/* ===== PROFILE ===== */
 
 .profile{
-    height:62px;
-
     display:flex;
     align-items:center;
-    justify-content:flex-end;
+    gap:18px;
+    padding:15px 20px;
+    margin-bottom:16px;
 
-    padding:0 24px;
+    border:1px solid #637cff;
+    border-radius:18px;
 
-    border-bottom:
-        1px solid rgba(255,255,255,.08);
-
-    color:#aab4d1;
-
-    font-family:'Orbitron',sans-serif;
-
-    font-size:12px;
-
-    letter-spacing:1px;
+    background:rgba(20,30,90,.35);
+    box-shadow:0 0 20px rgba(80,110,255,.3);
 }
 
-.profile span{
-    margin-left:8px;
+.avatar{
+    width:75px;
+    height:75px;
+    min-width:75px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #bb54ff;
 
-    color:#8fc5ff;
-
-    text-shadow:
-        0 0 12px rgba(80,160,255,.8);
+    box-shadow:
+      0 0 10px #b34aff,
+      0 0 30px #683cff;
 }
 
-/* =====================================================
-   CONTENT
-===================================================== */
-
-.content{
-    padding:28px;
+.profile b{
+    display:block;
+    font-size:24px;
+    color:white;
+    text-shadow:0 0 12px #9b78ff;
 }
 
-/* =====================================================
-   INFO BOX
-===================================================== */
+.profile small{
+    display:block;
+    margin-top:6px;
+    color:#80eeff;
+}
+
+/* ===== INFO ===== */
 
 .info{
-    position:relative;
-
-    min-height:76px;
-
     display:flex;
     align-items:center;
+    min-height:95px;
+    margin:14px 0;
+    padding:14px 20px;
 
-    padding:0 20px;
+    border:2px solid #397aff;
+    border-radius:18px;
 
-    margin-bottom:17px;
-
-    overflow:hidden;
-
-    border-radius:16px;
-
-    border:
-        1px solid rgba(100,150,255,.3);
-
-    background:
-        linear-gradient(
-            110deg,
-            rgba(45,75,160,.16),
-            rgba(255,255,255,.025)
-        );
+    background:rgba(4,12,45,.68);
 
     box-shadow:
-        inset 0 0 25px rgba(70,120,255,.04);
-
-    transition:.3s;
-}
-
-.info::after{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:70%;
-    height:100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(120,170,255,.12),
-            transparent
-        );
-
-    transform:skewX(-20deg);
-
-    animation:boxShine 5s infinite;
-}
-
-@keyframes boxShine{
-    0%,50%{
-        left:-100%;
-    }
-
-    75%,100%{
-        left:150%;
-    }
-}
-
-.info:hover{
-    transform:
-        translateY(-3px)
-        scale(1.01);
-
-    border-color:#679fff;
-
-    box-shadow:
-        0 0 25px rgba(80,140,255,.2);
-}
-
-.icon{
-    width:50px;
-
-    font-size:25px;
-
-    filter:
-        drop-shadow(0 0 8px #699dff);
-}
-
-.info-text{
-    position:relative;
-    z-index:2;
-
-    font-family:'Orbitron',sans-serif;
-
-    font-size:17px;
-    font-weight:800;
-
-    letter-spacing:.6px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #9bbcff
-        );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-/* =====================================================
-   FREE KEY
-===================================================== */
-
-.free{
-    position:relative;
-
-    min-height:68px;
-
-    display:flex;
-    align-items:center;
-
-    padding:0 20px;
-
-    margin:
-        24px 0
-        30px;
-
-    border-radius:16px;
-
-    border:
-        1px solid #40e6b1;
-
-    background:
-        linear-gradient(
-            100deg,
-            rgba(20,220,165,.13),
-            rgba(70,100,255,.09)
-        );
-
-    color:#61f5c9;
-
-    font-family:'Orbitron',sans-serif;
-
-    font-size:18px;
-    font-weight:900;
-
-    letter-spacing:1px;
-
-    box-shadow:
-        0 0 25px rgba(30,230,175,.14),
-        inset 0 0 25px rgba(30,230,175,.04);
-
-    overflow:hidden;
-}
-
-.free::before{
-    content:"✦";
-
-    position:absolute;
-
-    right:20px;
-
-    font-size:30px;
-
-    color:#68ffd3;
-
-    animation:pulse 1.7s infinite alternate;
-}
-
-@keyframes pulse{
-    from{
-        opacity:.35;
-        transform:scale(.8) rotate(0);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1.2) rotate(180deg);
-    }
-}
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.generate{
-    position:relative;
-
-    width:100%;
-    height:72px;
-
-    border:0;
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    cursor:pointer;
-
-    color:#fff;
-
-    font-family:'Orbitron',sans-serif;
-
-    font-size:19px;
-    font-weight:900;
-
-    letter-spacing:1px;
-
-    background:
-        linear-gradient(
-            105deg,
-            #ff3547,
-            #e32670,
-            #793cff
-        );
-
-    box-shadow:
-        0 0 20px rgba(255,50,100,.4),
-        0 12px 30px rgba(0,0,0,.35);
+      0 0 10px #2468ff,
+      inset 0 0 20px rgba(60,100,255,.12);
 
     transition:.25s;
 }
 
-.generate::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-120%;
-
-    width:70%;
-    height:100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.5),
-            transparent
-        );
-
-    transform:skewX(-25deg);
-
-    animation:
-        buttonShine 2.8s infinite;
+.info:hover{
+    transform:translateY(-4px) scale(1.01);
+    box-shadow:
+      0 0 20px #3eb5ff,
+      0 0 45px #713cff;
 }
 
-@keyframes buttonShine{
+.icon{
+    width:65px;
+    height:65px;
+    min-width:65px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:20px;
 
-    0%{
-        left:-120%;
-    }
+    border:2px solid #6482ff;
+    border-radius:17px;
 
-    45%,100%{
-        left:150%;
-    }
-}
-
-.generate:hover{
-    transform:
-        translateY(-4px)
-        scale(1.01);
+    font-size:32px;
 
     box-shadow:
-        0 0 35px rgba(255,50,140,.65),
-        0 15px 40px rgba(0,0,0,.4);
+      0 0 15px #3d73ff,
+      inset 0 0 15px rgba(80,100,255,.2);
 }
 
-.generate:active{
-    transform:scale(.96);
+.info h2{
+    margin:0;
+    font-size:24px;
+    font-style:italic;
+    text-shadow:0 0 12px #578eff;
 }
 
-/* =====================================================
-   WARNING
-===================================================== */
+.info p{
+    margin:6px 0 0;
+    color:#7eefff;
+}
 
-.warning{
-    margin-top:22px;
+/* ===== FREE KEY ===== */
 
-    text-align:center;
+.free{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:18px 0;
 
-    color:#ff7b83;
+    border:2px solid #38ffd0;
+    border-radius:18px;
 
-    font-size:14px;
+    color:#69ffe4;
+    font-size:28px;
+    font-weight:1000;
+    font-style:italic;
 
-    font-weight:700;
-
-    letter-spacing:.3px;
+    background:rgba(0,180,150,.08);
 
     text-shadow:
-        0 0 10px rgba(255,70,80,.35);
-}
-
-/* =====================================================
-   RESULT
-===================================================== */
-
-.key-box{
-    display:none;
-
-    margin-top:20px;
-
-    padding:20px;
-
-    border-radius:16px;
-
-    border:
-        1px solid #43e5b3;
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(30,220,170,.1),
-            rgba(70,110,255,.1)
-        );
-
-    text-align:center;
-
-    font-family:'Orbitron',sans-serif;
-
-    font-size:13px;
-
-    color:#6af5ca;
+      0 0 10px #00ffd5,
+      0 0 25px #00aaff;
 
     box-shadow:
-        0 0 30px rgba(40,230,175,.14);
+      0 0 15px #22e8c1,
+      0 0 35px rgba(0,230,255,.25);
 
-    animation:
-        result .45s ease;
+    animation:pulse 2s infinite;
 }
 
-.key-box a{
-    display:block;
-
-    margin-top:12px;
-
-    color:#75caff;
-
-    font-family:'Rajdhani',sans-serif;
-
-    font-size:18px;
-    font-weight:700;
-
-    word-break:break-all;
-
-    text-decoration:none;
-
-    text-shadow:
-        0 0 12px rgba(70,170,255,.5);
-}
-
-.key-box a:hover{
-    color:#db8aff;
-}
-
-/* =====================================================
-   RESULT ANIMATION
-===================================================== */
-
-@keyframes result{
-
-    from{
-        opacity:0;
-        transform:
-            translateY(15px)
-            scale(.96);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            translateY(0)
-            scale(1);
+@keyframes pulse{
+    50%{
+        box-shadow:
+          0 0 30px #22e8c1,
+          0 0 65px rgba(0,230,255,.4);
     }
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:600px){
-
-    .header{
-        height:70px;
-        padding:0 20px;
-    }
-
-    .logo{
-        font-size:18px;
-    }
-
-    .container{
-        margin:32px auto;
-    }
-
-    .anime-box{
-        height:220px;
-    }
-
-    .content{
-        padding:23px;
-    }
-
-    .info{
-        min-height:68px;
-    }
-
-    .info-text{
-        font-size:15px;
-    }
-
-    .free{
-        min-height:62px;
-        font-size:15px;
-    }
-
-    .generate{
-        height:68px;
-        font-size:16px;
-    }
-
-    .profile{
-        font-size:10px;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- GALAXY -->
-<div class="galaxy">
-
-    <div class="nebula n1"></div>
-    <div class="nebula n2"></div>
-
-    <div class="meteor m1"></div>
-    <div class="meteor m2"></div>
-    <div class="meteor m3"></div>
-    <div class="meteor m4"></div>
-
-</div>
-
-
-<header class="header">
-
-    <div class="logo">
-        ✦ KEY CHEATER ✦
-    </div>
-
-</header>
-
-
-<main class="container">
-
-
-<!-- ANIME -->
-
-<div class="anime-box">
-
-    <img
-        src="anime.jpg"
-        alt="Anime">
-
-    <div class="anime-title">
-        ✦ HOANGCHEAT • GALAXY SYSTEM ✦
-    </div>
-
-</div>
-
-
-<!-- PROFILE CARD -->
-
-<div class="card">
-
-    <div class="profile">
-
-        👤
-
-        <span>
-            BY: HOANGCHEAT
-        </span>
-
-    </div>
-
-
-    <div class="content">
-
-
-        <!-- NO ROOT -->
-
-        <div class="info">
-
-            <div class="icon">
-                🎮
-            </div>
-
-            <div class="info-text">
-                NO ROOT — 1
-            </div>
-
-        </div>
-
-
-        <!-- TIME -->
-
-        <div class="info">
-
-            <div class="icon">
-                ◷
-            </div>
-
-            <div class="info-text">
-                THỜI GIAN — 24 GIỜ
-            </div>
-
-        </div>
-
-
-        <!-- DEVICES -->
-
-        <div class="info">
-
-            <div class="icon">
-                📱
-            </div>
-
-            <div class="info-text">
-                MAX DEVICES — 1 MÁY
-            </div>
-
-        </div>
-
-
-        <!-- FREE -->
-
-        <div class="free">
-
-            💎
-
-            &nbsp;
-
-            FREE KEY SYSTEM
-
-        </div>
-
-
-        <!-- GENERATE -->
-
-        <button
-            class="generate"
-            onclick="generateKey()">
-
-            🚀
-
-            &nbsp;
-
-            GENERATE KEY
-
-        </button>
-
-
-        <!-- WARNING -->
-
-        <div class="warning">
-
-            ⚠️
-
-            Yêu cầu vượt link thủ công tối thiểu 130 giây
-
-        </div>
-
-
-        <!-- KEY -->
-
-        <div
-            id="keyBox"
-            class="key-box">
-
-            ✦ KEY GATEWAY ACTIVATED ✦
-
-            <a
-                href="https://ontops.link/-P_I8xM"
-                target="_blank">
-
-                https://ontops.link/-P_I8xM
-
-            </a>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</main>
-
-
-<script>
-
-/* =====================================================
-   GENERATE KEY + SOUND
-===================================================== */
-
-function generateKey(){
-
-    const box =
-        document.getElementById("keyBox");
-
-    box.style.display="block";
-
-
-    /* tạo âm thanh điện tử bằng Web Audio */
-
-    try{
-
-        const AudioContext =
-            window.AudioContext ||
-            window.webkitAudioContext;
-
-        const ctx =
-            new AudioContext();
-
-        const now =
-            ctx.currentTime;
-
-
-        /* tiếng chính */
-
-        const osc =
-            ctx.createOscillator();
-
-        const gain =
-            ctx.createGain();
-
-        osc.type="sine";
-
-        osc.frequency.setValueAtTime(
-            420,
-            now
-        );
-
-        osc.frequency.exponentialRampToValueAtTime(
-            1100,
-            now + .22
-        );
-
-        gain.gain.setValueAtTime(
-            .0001,
-            now
-        );
-
-        gain.gain.exponentialRampToValueAtTime(
-            .18,
-            now + .025
-        );
-
-        gain.gain.exponentialRampToValueAtTime(
-            .0001,
-            now + .32
-        );
-
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-
-        osc.start(now);
-        osc.stop(now + .32);
-
-
-        /* tiếng phụ */
-
-        const osc2 =
-            ctx.createOscillator();
-
-        const gain2 =
-            ctx.createGain();
-
-        osc2.type="triangle";
-
-        osc2.frequency.setValueAtTime(
-            760,
-            now + .08
-        );
-
-        osc2.frequency.exponentialRampToValueAtTime(
-            1450,
-            now + .28
-        );
-
-        gain2.gain.setValueAtTime(
-            .0001,
-            now
-        );
-
-        gain2.gain.exponentialRampToValueAtTime(
-            .09,
-            now + .1
-        );
-
-        gain2.gain.exponentialRampToValueAtTime(
-            .0001,
-            now + .4
-        );
-
-        osc2.connect(gain2);
-        gain2.connect(ctx.destination);
-
-        osc2.start(now + .08);
-        osc2.stop(now + .4);
-
-    }catch(error){
-
-        console.log("Audio unavailable");
-
-    }
-
-
-    /* cuộn tới link */
-
-    setTimeout(function(){
-
-        box.scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-        });
-
-    },100);
-
-}
-
-</script>
-
-</body>
-    </html>
+/* ===== GENERATE ===== */
+
+.generate{
+    width:100%;
+    min
