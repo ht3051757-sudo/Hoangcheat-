@@ -2,73 +2,214 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>KEY CHEATER - HoangCheat</title>
 
 <style>
 *{box-sizing:border-box}
 
-body{
+html,body{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f6fb;
-    color:#222;
+    min-height:100%;
 }
 
-.header{
-    height:90px;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#222;
+    background:
+      radial-gradient(circle at 15% 20%,rgba(75,110,255,.18),transparent 30%),
+      radial-gradient(circle at 85% 75%,rgba(160,60,255,.15),transparent 30%),
+      #f4f6fb;
+    overflow-x:hidden;
+}
+
+/* ===== NỀN SAO ===== */
+
+.space{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.space:before,
+.space:after{
+    content:"";
+    position:absolute;
+    inset:-100px;
+    background-image:
+      radial-gradient(circle,#fff 1px,transparent 1.5px),
+      radial-gradient(circle,#7faaff 1px,transparent 1.5px),
+      radial-gradient(circle,#c58cff 1px,transparent 1.5px);
+    background-size:95px 95px,145px 145px,210px 210px;
+    background-position:10px 20px,50px 80px,120px 40px;
+    opacity:.45;
+}
+
+.space:before{
+    animation:starsMove 22s linear infinite;
+}
+
+.space:after{
+    opacity:.25;
+    animation:starsMove 35s linear infinite reverse;
+}
+
+@keyframes starsMove{
+    from{transform:translateY(0)}
+    to{transform:translateY(120px)}
+}
+
+/* ===== SAO BĂNG ===== */
+
+.shooting{
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
     background:#fff;
-    border-bottom:1px solid #e5e7eb;
+    box-shadow:
+      0 0 8px #fff,
+      0 0 18px #77a8ff,
+      0 0 35px #5b7cff;
+    transform:rotate(-45deg);
+}
+
+.shooting:after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:3px;
+    right:2px;
+    top:1px;
+    background:linear-gradient(
+      90deg,
+      rgba(255,255,255,.9),
+      rgba(90,140,255,.45),
+      transparent
+    );
+}
+
+.s1{
+    top:12%;
+    left:100%;
+    animation:meteor 4.5s linear infinite;
+}
+
+.s2{
+    top:35%;
+    left:110%;
+    animation:meteor 6s linear infinite 2s;
+}
+
+.s3{
+    top:65%;
+    left:95%;
+    animation:meteor 5s linear infinite 4s;
+}
+
+@keyframes meteor{
+    0%{
+        transform:translate(0,0) rotate(-45deg);
+        opacity:0;
+    }
+    8%{opacity:1}
+    65%{opacity:1}
+    100%{
+        transform:translate(-750px,750px) rotate(-45deg);
+        opacity:0;
+    }
+}
+
+/* ===== HEADER ===== */
+
+.header{
+    position:relative;
+    z-index:2;
+    height:90px;
     display:flex;
     align-items:center;
     padding:0 36px;
+    background:rgba(255,255,255,.88);
+    border-bottom:1px solid #e5e7eb;
+    backdrop-filter:blur(12px);
 }
 
 .logo{
     font-size:25px;
-    font-weight:800;
+    font-weight:900;
     color:#18203b;
+    text-shadow:0 0 15px rgba(80,130,255,.25);
 }
 
+/* ===== CONTAINER ===== */
+
 .container{
+    position:relative;
+    z-index:2;
     max-width:700px;
     margin:78px auto;
     padding:0 18px;
 }
 
+/* ===== CARD ===== */
+
 .card{
-    background:#fff;
-    border:1px solid #e3e6ed;
-    border-radius:12px;
+    background:rgba(255,255,255,.94);
+    border:1px solid rgba(220,225,240,.9);
+    border-radius:16px;
     overflow:hidden;
+    box-shadow:
+      0 10px 35px rgba(20,30,70,.08),
+      0 0 45px rgba(70,110,255,.08);
+    backdrop-filter:blur(15px);
 }
+
+/* ===== PROFILE ===== */
 
 .profile{
     height:60px;
-    border-bottom:1px solid #e5e7eb;
     display:flex;
     justify-content:flex-end;
     align-items:center;
     padding:0 25px;
     color:#666;
     font-weight:700;
+    border-bottom:1px solid #e5e7eb;
 }
+
+.profile span{
+    margin-left:8px;
+    color:#4d5568;
+}
+
+/* ===== CONTENT ===== */
 
 .content{
     padding:38px 36px;
 }
 
+/* ===== INFO ===== */
+
 .info{
     height:80px;
-    border:2px solid #e3e5eb;
-    border-radius:10px;
     display:flex;
     align-items:center;
     padding:0 28px;
     margin-bottom:22px;
+    border:2px solid #e3e5eb;
+    border-radius:10px;
     color:#5276c9;
+    background:rgba(255,255,255,.85);
     font-size:25px;
     font-weight:700;
+    transition:.25s;
+}
+
+.info:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 20px rgba(80,120,220,.12);
 }
 
 .icon{
@@ -76,70 +217,148 @@ body{
     font-size:25px;
 }
 
+/* ===== FREE KEY ===== */
+
 .free{
     height:62px;
-    border:2px solid #58d3ae;
-    border-radius:10px;
     display:flex;
     align-items:center;
     padding:0 28px;
+    margin-bottom:38px;
+    border:2px solid #58d3ae;
+    border-radius:10px;
     color:#2eb98d;
+    background:rgba(240,255,250,.8);
     font-size:24px;
     font-weight:700;
-    margin-bottom:38px;
+    box-shadow:0 0 20px rgba(60,210,170,.08);
 }
+
+/* ===== BUTTON ===== */
 
 .generate{
     width:100%;
     height:74px;
     border:0;
     border-radius:10px;
-    background:#ef493e;
-    color:white;
+    background:linear-gradient(135deg,#ef493e,#e52e5d);
+    color:#fff;
     font-size:24px;
     font-weight:800;
     cursor:pointer;
+    box-shadow:0 7px 20px rgba(239,73,62,.2);
+    transition:.25s;
 }
+
+.generate:hover{
+    transform:translateY(-3px);
+    box-shadow:
+      0 0 25px rgba(239,73,62,.45),
+      0 10px 25px rgba(0,0,0,.12);
+}
+
+.generate:active{
+    transform:scale(.98);
+}
+
+/* ===== WARNING ===== */
 
 .warning{
     text-align:center;
     color:#e74c43;
     font-weight:700;
     margin-top:25px;
+    font-size:16px;
 }
+
+/* ===== LINK ===== */
 
 .key-box{
     display:none;
     margin-top:20px;
     padding:18px;
-    border-radius:8px;
+    border-radius:10px;
+    text-align:center;
+    color:#168765;
+    font-weight:bold;
     background:#f0fdf8;
     border:1px solid #58d3ae;
-    text-align:center;
-    font-weight:bold;
+    animation:showKey .35s ease;
 }
 
 .key-box a{
     display:block;
     margin-top:10px;
     color:#5276c9;
+    font-weight:800;
+    text-decoration:none;
     word-break:break-all;
 }
 
+.key-box a:hover{
+    text-decoration:underline;
+}
+
+@keyframes showKey{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== MOBILE ===== */
+
 @media(max-width:600px){
-    .info{font-size:21px}
-    .free{font-size:20px}
+
+    .header{
+        height:75px;
+        padding:0 25px;
+    }
+
+    .container{
+        margin:50px auto;
+    }
+
+    .content{
+        padding:30px 25px;
+    }
+
+    .info{
+        font-size:20px;
+        padding:0 20px;
+    }
+
+    .free{
+        font-size:19px;
+        padding:0 20px;
+    }
+
+    .generate{
+        height:68px;
+        font-size:21px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<div class="space">
+    <div class="shooting s1"></div>
+    <div class="shooting s2"></div>
+    <div class="shooting s3"></div>
+</div>
+
 <header class="header">
     <div class="logo">KEY CHEATER</div>
 </header>
 
 <main class="container">
+
 <div class="card">
 
     <div class="profile">
@@ -184,13 +403,22 @@ body{
 
     </div>
 </div>
+
 </main>
 
 <script>
 function generateKey(){
-    document.getElementById("keyBox").style.display="block";
+
+    const box=document.getElementById("keyBox");
+
+    box.style.display="block";
+
+    box.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 }
 </script>
 
 </body>
-  </html>
+    </html>
