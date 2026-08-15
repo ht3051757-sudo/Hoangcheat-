@@ -2,11 +2,19 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>KEY CHEATER - HoangCheat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HoangCheat • Get Key</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
+
+*{
+    box-sizing:border-box;
+}
 
 html,body{
     margin:0;
@@ -14,410 +22,1250 @@ html,body{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    color:#222;
-    background:
-      radial-gradient(circle at 15% 20%,rgba(75,110,255,.18),transparent 30%),
-      radial-gradient(circle at 85% 75%,rgba(160,60,255,.15),transparent 30%),
-      #f4f6fb;
+    font-family:'Rajdhani',sans-serif;
+    color:#fff;
     overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(60,90,255,.35),
+            transparent 25%),
+
+        radial-gradient(circle at 85% 20%,
+            rgba(170,50,255,.25),
+            transparent 25%),
+
+        radial-gradient(circle at 50% 100%,
+            rgba(20,120,255,.22),
+            transparent 35%),
+
+        #02030c;
 }
 
-/* ===== NỀN SAO ===== */
+/* =====================================================
+   GALAXY BACKGROUND
+===================================================== */
 
-.space{
+.galaxy{
     position:fixed;
     inset:0;
-    z-index:0;
-    pointer-events:none;
     overflow:hidden;
+    pointer-events:none;
+    z-index:0;
 }
 
-.space:before,
-.space:after{
+/* sao */
+
+.galaxy::before{
     content:"";
     position:absolute;
     inset:-100px;
+
     background-image:
-      radial-gradient(circle,#fff 1px,transparent 1.5px),
-      radial-gradient(circle,#7faaff 1px,transparent 1.5px),
-      radial-gradient(circle,#c58cff 1px,transparent 1.5px);
-    background-size:95px 95px,145px 145px,210px 210px;
-    background-position:10px 20px,50px 80px,120px 40px;
-    opacity:.45;
-}
+        radial-gradient(circle,#fff 1px,transparent 1.6px),
+        radial-gradient(circle,#8eb8ff 1px,transparent 1.5px),
+        radial-gradient(circle,#d895ff 1px,transparent 1.5px),
+        radial-gradient(circle,#fff 1.5px,transparent 2px);
 
-.space:before{
-    animation:starsMove 22s linear infinite;
-}
+    background-size:
+        75px 75px,
+        130px 130px,
+        190px 190px,
+        260px 260px;
 
-.space:after{
-    opacity:.25;
-    animation:starsMove 35s linear infinite reverse;
+    background-position:
+        10px 20px,
+        50px 80px,
+        120px 30px,
+        200px 150px;
+
+    opacity:.65;
+
+    animation:
+        starsMove 25s linear infinite,
+        starsGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes starsMove{
-    from{transform:translateY(0)}
-    to{transform:translateY(120px)}
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(160px);
+    }
 }
 
-/* ===== SAO BĂNG ===== */
+@keyframes starsGlow{
+    from{
+        filter:brightness(.7);
+    }
 
-.shooting{
+    to{
+        filter:brightness(1.35);
+    }
+}
+
+/* tinh vân */
+
+.nebula{
     position:absolute;
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(100,90,255,.20),
+            rgba(160,40,255,.12),
+            transparent 70%
+        );
+
+    filter:blur(35px);
+
+    animation:nebula 12s ease-in-out infinite alternate;
+}
+
+.n1{
+    top:-300px;
+    left:-250px;
+}
+
+.n2{
+    right:-300px;
+    bottom:-250px;
+
+    animation-delay:3s;
+}
+
+@keyframes nebula{
+    from{
+        transform:scale(.8) rotate(0deg);
+    }
+
+    to{
+        transform:scale(1.2) rotate(25deg);
+    }
+}
+
+/* =====================================================
+   SHOOTING STARS
+===================================================== */
+
+.meteor{
+    position:fixed;
+
     width:5px;
     height:5px;
+
     border-radius:50%;
+
     background:#fff;
+
     box-shadow:
-      0 0 8px #fff,
-      0 0 18px #77a8ff,
-      0 0 35px #5b7cff;
+        0 0 8px #fff,
+        0 0 18px #6ca9ff,
+        0 0 40px #8b4dff;
+
     transform:rotate(-45deg);
+
+    z-index:1;
 }
 
-.shooting:after{
+.meteor::after{
     content:"";
+
     position:absolute;
-    width:150px;
-    height:3px;
+
     right:2px;
     top:1px;
-    background:linear-gradient(
-      90deg,
-      rgba(255,255,255,.9),
-      rgba(90,140,255,.45),
-      transparent
-    );
+
+    width:170px;
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.95),
+            rgba(90,150,255,.55),
+            rgba(140,70,255,.2),
+            transparent
+        );
+
+    filter:blur(.5px);
 }
 
-.s1{
-    top:12%;
-    left:100%;
-    animation:meteor 4.5s linear infinite;
+.m1{
+    top:8%;
+    left:105%;
+
+    animation:meteor 4s linear infinite;
 }
 
-.s2{
-    top:35%;
+.m2{
+    top:32%;
     left:110%;
-    animation:meteor 6s linear infinite 2s;
+
+    animation:meteor 5s linear infinite 1.8s;
 }
 
-.s3{
-    top:65%;
-    left:95%;
-    animation:meteor 5s linear infinite 4s;
+.m3{
+    top:57%;
+    left:105%;
+
+    animation:meteor 4.7s linear infinite 3.5s;
+}
+
+.m4{
+    top:18%;
+    left:120%;
+
+    animation:meteor 6s linear infinite 5s;
 }
 
 @keyframes meteor{
+
     0%{
         transform:translate(0,0) rotate(-45deg);
         opacity:0;
     }
-    8%{opacity:1}
-    65%{opacity:1}
+
+    8%{
+        opacity:1;
+    }
+
+    65%{
+        opacity:1;
+    }
+
     100%{
-        transform:translate(-750px,750px) rotate(-45deg);
+        transform:
+            translate(-800px,800px)
+            rotate(-45deg);
+
         opacity:0;
     }
 }
 
-/* ===== HEADER ===== */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
     position:relative;
-    z-index:2;
-    height:90px;
+    z-index:5;
+
+    height:82px;
+
     display:flex;
     align-items:center;
-    padding:0 36px;
-    background:rgba(255,255,255,.88);
-    border-bottom:1px solid #e5e7eb;
-    backdrop-filter:blur(12px);
+
+    padding:0 28px;
+
+    background:
+        rgba(2,4,16,.72);
+
+    border-bottom:
+        1px solid rgba(110,150,255,.2);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 5px 30px rgba(0,0,0,.25);
 }
 
 .logo{
-    font-size:25px;
+    font-family:'Orbitron',sans-serif;
+
+    font-size:23px;
     font-weight:900;
-    color:#18203b;
-    text-shadow:0 0 15px rgba(80,130,255,.25);
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #6fa9ff,
+            #c96cff,
+            #ffffff
+        );
+
+    background-size:250%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:logoFlow 4s linear infinite;
+
+    text-shadow:
+        0 0 25px rgba(90,140,255,.5);
 }
 
-/* ===== CONTAINER ===== */
+@keyframes logoFlow{
+    from{
+        background-position:0%;
+    }
+
+    to{
+        background-position:250%;
+    }
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 .container{
     position:relative;
-    z-index:2;
+    z-index:3;
+
+    width:100%;
     max-width:700px;
-    margin:78px auto;
-    padding:0 18px;
+
+    margin:45px auto;
+
+    padding:
+        0 17px;
 }
 
-/* ===== CARD ===== */
+/* =====================================================
+   ANIME
+===================================================== */
+
+.anime-box{
+    position:relative;
+
+    width:100%;
+    height:245px;
+
+    margin-bottom:18px;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:
+        1px solid rgba(110,160,255,.45);
+
+    background:#080a18;
+
+    box-shadow:
+        0 0 35px rgba(60,100,255,.22),
+        0 20px 60px rgba(0,0,0,.45);
+}
+
+.anime-box img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center 28%;
+
+    filter:
+        saturate(1.15)
+        contrast(1.05)
+        brightness(.82);
+
+    transform:scale(1.04);
+
+    transition:
+        transform 5s ease,
+        filter .5s ease;
+}
+
+.anime-box:hover img{
+    transform:scale(1.10);
+
+    filter:
+        saturate(1.3)
+        contrast(1.08)
+        brightness(.95);
+}
+
+/* phủ màu */
+
+.anime-box::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 40%,
+            rgba(3,5,18,.92) 100%
+        );
+}
+
+/* chữ trên anime */
+
+.anime-title{
+    position:absolute;
+
+    z-index:2;
+
+    left:22px;
+    bottom:18px;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:17px;
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 8px #6da8ff,
+        0 0 20px #7c4dff;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
 
 .card{
-    background:rgba(255,255,255,.94);
-    border:1px solid rgba(220,225,240,.9);
-    border-radius:16px;
+    position:relative;
+
     overflow:hidden;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14,20,48,.94),
+            rgba(5,8,24,.96)
+        );
+
+    border:
+        1px solid rgba(110,150,255,.35);
+
     box-shadow:
-      0 10px 35px rgba(20,30,70,.08),
-      0 0 45px rgba(70,110,255,.08);
-    backdrop-filter:blur(15px);
+        0 0 35px rgba(70,100,255,.18),
+        0 25px 80px rgba(0,0,0,.6);
+
+    backdrop-filter:blur(20px);
 }
 
-/* ===== PROFILE ===== */
+/* viền chạy */
+
+.card::before{
+    content:"";
+
+    position:absolute;
+    inset:-2px;
+
+    border-radius:24px;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent,
+            #4e8cff,
+            transparent,
+            #c24cff,
+            transparent
+        );
+
+    animation:
+        borderSpin 7s linear infinite;
+
+    opacity:.45;
+
+    z-index:-1;
+}
+
+@keyframes borderSpin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =====================================================
+   PROFILE
+===================================================== */
 
 .profile{
-    height:60px;
+    height:62px;
+
     display:flex;
-    justify-content:flex-end;
     align-items:center;
-    padding:0 25px;
-    color:#666;
-    font-weight:700;
-    border-bottom:1px solid #e5e7eb;
+    justify-content:flex-end;
+
+    padding:0 24px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    color:#aab4d1;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:12px;
+
+    letter-spacing:1px;
 }
 
 .profile span{
     margin-left:8px;
-    color:#4d5568;
+
+    color:#8fc5ff;
+
+    text-shadow:
+        0 0 12px rgba(80,160,255,.8);
 }
 
-/* ===== CONTENT ===== */
+/* =====================================================
+   CONTENT
+===================================================== */
 
 .content{
-    padding:38px 36px;
+    padding:28px;
 }
 
-/* ===== INFO ===== */
+/* =====================================================
+   INFO BOX
+===================================================== */
 
 .info{
-    height:80px;
+    position:relative;
+
+    min-height:76px;
+
     display:flex;
     align-items:center;
-    padding:0 28px;
-    margin-bottom:22px;
-    border:2px solid #e3e5eb;
-    border-radius:10px;
-    color:#5276c9;
-    background:rgba(255,255,255,.85);
-    font-size:25px;
-    font-weight:700;
-    transition:.25s;
+
+    padding:0 20px;
+
+    margin-bottom:17px;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    border:
+        1px solid rgba(100,150,255,.3);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(45,75,160,.16),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        inset 0 0 25px rgba(70,120,255,.04);
+
+    transition:.3s;
+}
+
+.info::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:70%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(120,170,255,.12),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    animation:boxShine 5s infinite;
+}
+
+@keyframes boxShine{
+    0%,50%{
+        left:-100%;
+    }
+
+    75%,100%{
+        left:150%;
+    }
 }
 
 .info:hover{
-    transform:translateY(-2px);
-    box-shadow:0 5px 20px rgba(80,120,220,.12);
+    transform:
+        translateY(-3px)
+        scale(1.01);
+
+    border-color:#679fff;
+
+    box-shadow:
+        0 0 25px rgba(80,140,255,.2);
 }
 
 .icon{
-    width:45px;
+    width:50px;
+
     font-size:25px;
+
+    filter:
+        drop-shadow(0 0 8px #699dff);
 }
 
-/* ===== FREE KEY ===== */
+.info-text{
+    position:relative;
+    z-index:2;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:17px;
+    font-weight:800;
+
+    letter-spacing:.6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #9bbcff
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* =====================================================
+   FREE KEY
+===================================================== */
 
 .free{
-    height:62px;
+    position:relative;
+
+    min-height:68px;
+
     display:flex;
     align-items:center;
-    padding:0 28px;
-    margin-bottom:38px;
-    border:2px solid #58d3ae;
-    border-radius:10px;
-    color:#2eb98d;
-    background:rgba(240,255,250,.8);
-    font-size:24px;
-    font-weight:700;
-    box-shadow:0 0 20px rgba(60,210,170,.08);
+
+    padding:0 20px;
+
+    margin:
+        24px 0
+        30px;
+
+    border-radius:16px;
+
+    border:
+        1px solid #40e6b1;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(20,220,165,.13),
+            rgba(70,100,255,.09)
+        );
+
+    color:#61f5c9;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:18px;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    box-shadow:
+        0 0 25px rgba(30,230,175,.14),
+        inset 0 0 25px rgba(30,230,175,.04);
+
+    overflow:hidden;
 }
 
-/* ===== BUTTON ===== */
+.free::before{
+    content:"✦";
+
+    position:absolute;
+
+    right:20px;
+
+    font-size:30px;
+
+    color:#68ffd3;
+
+    animation:pulse 1.7s infinite alternate;
+}
+
+@keyframes pulse{
+    from{
+        opacity:.35;
+        transform:scale(.8) rotate(0);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.2) rotate(180deg);
+    }
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
 
 .generate{
+    position:relative;
+
     width:100%;
-    height:74px;
+    height:72px;
+
     border:0;
-    border-radius:10px;
-    background:linear-gradient(135deg,#ef493e,#e52e5d);
-    color:#fff;
-    font-size:24px;
-    font-weight:800;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
     cursor:pointer;
-    box-shadow:0 7px 20px rgba(239,73,62,.2);
+
+    color:#fff;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:19px;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    background:
+        linear-gradient(
+            105deg,
+            #ff3547,
+            #e32670,
+            #793cff
+        );
+
+    box-shadow:
+        0 0 20px rgba(255,50,100,.4),
+        0 12px 30px rgba(0,0,0,.35);
+
     transition:.25s;
 }
 
+.generate::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:70%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.5),
+            transparent
+        );
+
+    transform:skewX(-25deg);
+
+    animation:
+        buttonShine 2.8s infinite;
+}
+
+@keyframes buttonShine{
+
+    0%{
+        left:-120%;
+    }
+
+    45%,100%{
+        left:150%;
+    }
+}
+
 .generate:hover{
-    transform:translateY(-3px);
+    transform:
+        translateY(-4px)
+        scale(1.01);
+
     box-shadow:
-      0 0 25px rgba(239,73,62,.45),
-      0 10px 25px rgba(0,0,0,.12);
+        0 0 35px rgba(255,50,140,.65),
+        0 15px 40px rgba(0,0,0,.4);
 }
 
 .generate:active{
-    transform:scale(.98);
+    transform:scale(.96);
 }
 
-/* ===== WARNING ===== */
+/* =====================================================
+   WARNING
+===================================================== */
 
 .warning{
+    margin-top:22px;
+
     text-align:center;
-    color:#e74c43;
+
+    color:#ff7b83;
+
+    font-size:14px;
+
     font-weight:700;
-    margin-top:25px;
-    font-size:16px;
+
+    letter-spacing:.3px;
+
+    text-shadow:
+        0 0 10px rgba(255,70,80,.35);
 }
 
-/* ===== LINK ===== */
+/* =====================================================
+   RESULT
+===================================================== */
 
 .key-box{
     display:none;
+
     margin-top:20px;
-    padding:18px;
-    border-radius:10px;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    border:
+        1px solid #43e5b3;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(30,220,170,.1),
+            rgba(70,110,255,.1)
+        );
+
     text-align:center;
-    color:#168765;
-    font-weight:bold;
-    background:#f0fdf8;
-    border:1px solid #58d3ae;
-    animation:showKey .35s ease;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:13px;
+
+    color:#6af5ca;
+
+    box-shadow:
+        0 0 30px rgba(40,230,175,.14);
+
+    animation:
+        result .45s ease;
 }
 
 .key-box a{
     display:block;
-    margin-top:10px;
-    color:#5276c9;
-    font-weight:800;
-    text-decoration:none;
+
+    margin-top:12px;
+
+    color:#75caff;
+
+    font-family:'Rajdhani',sans-serif;
+
+    font-size:18px;
+    font-weight:700;
+
     word-break:break-all;
+
+    text-decoration:none;
+
+    text-shadow:
+        0 0 12px rgba(70,170,255,.5);
 }
 
 .key-box a:hover{
-    text-decoration:underline;
+    color:#db8aff;
 }
 
-@keyframes showKey{
+/* =====================================================
+   RESULT ANIMATION
+===================================================== */
+
+@keyframes result{
+
     from{
         opacity:0;
-        transform:translateY(10px);
+        transform:
+            translateY(15px)
+            scale(.96);
     }
+
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
-/* ===== MOBILE ===== */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:600px){
 
     .header{
-        height:75px;
-        padding:0 25px;
+        height:70px;
+        padding:0 20px;
+    }
+
+    .logo{
+        font-size:18px;
     }
 
     .container{
-        margin:50px auto;
+        margin:32px auto;
+    }
+
+    .anime-box{
+        height:220px;
     }
 
     .content{
-        padding:30px 25px;
+        padding:23px;
     }
 
     .info{
-        font-size:20px;
-        padding:0 20px;
+        min-height:68px;
+    }
+
+    .info-text{
+        font-size:15px;
     }
 
     .free{
-        font-size:19px;
-        padding:0 20px;
+        min-height:62px;
+        font-size:15px;
     }
 
     .generate{
         height:68px;
-        font-size:21px;
+        font-size:16px;
+    }
+
+    .profile{
+        font-size:10px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="space">
-    <div class="shooting s1"></div>
-    <div class="shooting s2"></div>
-    <div class="shooting s3"></div>
+<!-- GALAXY -->
+<div class="galaxy">
+
+    <div class="nebula n1"></div>
+    <div class="nebula n2"></div>
+
+    <div class="meteor m1"></div>
+    <div class="meteor m2"></div>
+    <div class="meteor m3"></div>
+    <div class="meteor m4"></div>
+
 </div>
 
+
 <header class="header">
-    <div class="logo">KEY CHEATER</div>
+
+    <div class="logo">
+        ✦ KEY CHEATER ✦
+    </div>
+
 </header>
 
+
 <main class="container">
+
+
+<!-- ANIME -->
+
+<div class="anime-box">
+
+    <img
+        src="anime.jpg"
+        alt="Anime">
+
+    <div class="anime-title">
+        ✦ HOANGCHEAT • GALAXY SYSTEM ✦
+    </div>
+
+</div>
+
+
+<!-- PROFILE CARD -->
 
 <div class="card">
 
     <div class="profile">
-        👤 <span>BY: HoangCheat</span>
+
+        👤
+
+        <span>
+            BY: HOANGCHEAT
+        </span>
+
     </div>
+
 
     <div class="content">
 
-        <div class="info">
-            <div class="icon">🎮</div>
-            No Root - 1
-        </div>
+
+        <!-- NO ROOT -->
 
         <div class="info">
-            <div class="icon">◷</div>
-            Thời gian: 24 Giờ
+
+            <div class="icon">
+                🎮
+            </div>
+
+            <div class="info-text">
+                NO ROOT — 1
+            </div>
+
         </div>
 
+
+        <!-- TIME -->
+
         <div class="info">
-            <div class="icon">📱</div>
-            Max Devices: 1 Máy
+
+            <div class="icon">
+                ◷
+            </div>
+
+            <div class="info-text">
+                THỜI GIAN — 24 GIỜ
+            </div>
+
         </div>
+
+
+        <!-- DEVICES -->
+
+        <div class="info">
+
+            <div class="icon">
+                📱
+            </div>
+
+            <div class="info-text">
+                MAX DEVICES — 1 MÁY
+            </div>
+
+        </div>
+
+
+        <!-- FREE -->
 
         <div class="free">
-            💎 &nbsp; FREE KEY SYSTEM
+
+            💎
+
+            &nbsp;
+
+            FREE KEY SYSTEM
+
         </div>
 
-        <button class="generate" onclick="generateKey()">
-            🚪 &nbsp; Generate Key
+
+        <!-- GENERATE -->
+
+        <button
+            class="generate"
+            onclick="generateKey()">
+
+            🚀
+
+            &nbsp;
+
+            GENERATE KEY
+
         </button>
 
+
+        <!-- WARNING -->
+
         <div class="warning">
-            ⚠️ &nbsp; Yêu cầu vượt link thủ công tối thiểu 130 giây
+
+            ⚠️
+
+            Yêu cầu vượt link thủ công tối thiểu 130 giây
+
         </div>
 
-        <div id="keyBox" class="key-box">
-            🔗 Link lấy Key:
-            <a href="https://ontops.link/-P_I8xM" target="_blank">
+
+        <!-- KEY -->
+
+        <div
+            id="keyBox"
+            class="key-box">
+
+            ✦ KEY GATEWAY ACTIVATED ✦
+
+            <a
+                href="https://ontops.link/-P_I8xM"
+                target="_blank">
+
                 https://ontops.link/-P_I8xM
+
             </a>
+
         </div>
+
 
     </div>
+
 </div>
 
 </main>
 
+
 <script>
+
+/* =====================================================
+   GENERATE KEY + SOUND
+===================================================== */
+
 function generateKey(){
 
-    const box=document.getElementById("keyBox");
+    const box =
+        document.getElementById("keyBox");
 
     box.style.display="block";
 
-    box.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
+
+    /* tạo âm thanh điện tử bằng Web Audio */
+
+    try{
+
+        const AudioContext =
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        const ctx =
+            new AudioContext();
+
+        const now =
+            ctx.currentTime;
+
+
+        /* tiếng chính */
+
+        const osc =
+            ctx.createOscillator();
+
+        const gain =
+            ctx.createGain();
+
+        osc.type="sine";
+
+        osc.frequency.setValueAtTime(
+            420,
+            now
+        );
+
+        osc.frequency.exponentialRampToValueAtTime(
+            1100,
+            now + .22
+        );
+
+        gain.gain.setValueAtTime(
+            .0001,
+            now
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            .18,
+            now + .025
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            .0001,
+            now + .32
+        );
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + .32);
+
+
+        /* tiếng phụ */
+
+        const osc2 =
+            ctx.createOscillator();
+
+        const gain2 =
+            ctx.createGain();
+
+        osc2.type="triangle";
+
+        osc2.frequency.setValueAtTime(
+            760,
+            now + .08
+        );
+
+        osc2.frequency.exponentialRampToValueAtTime(
+            1450,
+            now + .28
+        );
+
+        gain2.gain.setValueAtTime(
+            .0001,
+            now
+        );
+
+        gain2.gain.exponentialRampToValueAtTime(
+            .09,
+            now + .1
+        );
+
+        gain2.gain.exponentialRampToValueAtTime(
+            .0001,
+            now + .4
+        );
+
+        osc2.connect(gain2);
+        gain2.connect(ctx.destination);
+
+        osc2.start(now + .08);
+        osc2.stop(now + .4);
+
+    }catch(error){
+
+        console.log("Audio unavailable");
+
+    }
+
+
+    /* cuộn tới link */
+
+    setTimeout(function(){
+
+        box.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    },100);
+
 }
+
 </script>
 
 </body>
